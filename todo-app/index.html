@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo 待办清单</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <h1>我的待办</h1>
+            <p class="subtitle" id="dateText"></p>
+        </header>
+
+        <form class="input-area" id="todoForm">
+            <input
+                type="text"
+                id="todoInput"
+                class="todo-input"
+                placeholder="添加一个新的待办事项..."
+                autocomplete="off"
+                maxlength="120"
+            />
+            <button type="submit" class="add-btn" aria-label="添加">
+                <span>＋</span>
+            </button>
+        </form>
+
+        <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">全部 <span class="count" id="countAll">0</span></button>
+            <button class="filter-btn" data-filter="active">未完成 <span class="count" id="countActive">0</span></button>
+            <button class="filter-btn" data-filter="completed">已完成 <span class="count" id="countCompleted">0</span></button>
+        </div>
+
+        <ul class="todo-list" id="todoList"></ul>
+
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">✓</div>
+            <p>暂时没有待办，添加一个开始吧！</p>
+        </div>
+
+        <footer class="app-footer">
+            <span id="remainingText">剩余 0 项</span>
+            <button id="clearCompleted" class="clear-btn">清除已完成</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
